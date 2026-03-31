@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-forest-900 font-body antialiased;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  /* Focus ring for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-tech-500 ring-offset-2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-forest-800 text-white font-body font-semibold text-sm rounded-lg
+           hover:bg-forest-700 active:bg-forest-900 transition-colors duration-150
+           focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-white text-forest-800 font-body font-semibold text-sm rounded-lg border border-forest-200
+           hover:bg-forest-50 active:bg-forest-100 transition-colors duration-150
+           focus-visible:ring-2 focus-visible:ring-forest-500 focus-visible:ring-offset-2;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-gold-500 text-forest-900 font-body font-semibold text-sm rounded-lg
+           hover:bg-gold-600 active:bg-gold-700 transition-colors duration-150
+           focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-card border border-forest-100 p-6 transition-shadow duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-card-hover cursor-pointer;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 bg-white border border-forest-200 rounded-lg text-sm text-forest-900
+           placeholder:text-forest-400 focus:outline-none focus:ring-2 focus:ring-tech-400 focus:border-transparent
+           transition-colors duration-150;
+  }
+
+  .select-field {
+    @apply input-field appearance-none cursor-pointer;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-forest-800 mb-1.5;
+  }
+
+  .section-header {
+    @apply pb-6 mb-8 border-b border-forest-100;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .tag-forest {
+    @apply tag bg-forest-100 text-forest-800;
+  }
+
+  .tag-gold {
+    @apply tag bg-gold-100 text-gold-700;
+  }
+
+  .tag-tech {
+    @apply tag bg-tech-100 text-tech-700;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Smooth page transitions */
+  .page-enter {
+    animation: fadeSlideIn 0.3s ease-out;
+  }
+
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Lesson output prose styling */
+  .lesson-prose h2 {
+    @apply font-display text-xl font-semibold text-forest-800 mt-8 mb-3 pb-2 border-b border-forest-100;
+  }
+  .lesson-prose h3 {
+    @apply font-display text-base font-semibold text-forest-700 mt-5 mb-2;
+  }
+  .lesson-prose p {
+    @apply text-forest-700 leading-relaxed mb-3;
+  }
+  .lesson-prose ul {
+    @apply list-disc list-inside text-forest-700 space-y-1 mb-3;
+  }
+  .lesson-prose ol {
+    @apply list-decimal list-inside text-forest-700 space-y-1 mb-3;
+  }
+  .lesson-prose li {
+    @apply leading-relaxed;
+  }
+  .lesson-prose strong {
+    @apply font-semibold text-forest-800;
+  }
+  .lesson-prose em {
+    @apply italic text-forest-600;
+  }
+  .lesson-prose code {
+    @apply font-mono text-sm bg-forest-50 text-tech-700 px-1.5 py-0.5 rounded;
+  }
+}
