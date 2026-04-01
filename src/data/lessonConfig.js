@@ -14,7 +14,7 @@ export const literacyStrands = [
   {
     value: 'Reading',
     label: 'Reading',
-    icon: '\u{1F4D6}',
+    icon: '📖',
     attainmentTargets: [
       'Reading for meaning and enjoyment',
       'Reading for information (print texts)',
@@ -29,7 +29,7 @@ export const literacyStrands = [
   {
     value: 'Writing',
     label: 'Writing',
-    icon: '\u270D\uFE0F',
+    icon: '✍️',
     attainmentTargets: [
       'Writing process (planning, drafting, revising, editing, publishing)',
       'Writing for different purposes (to inform, persuade, entertain, describe)',
@@ -44,7 +44,7 @@ export const literacyStrands = [
   {
     value: 'Speaking and Listening',
     label: 'Speaking & Listening',
-    icon: '\u{1F5E3}\uFE0F',
+    icon: '🗣️',
     attainmentTargets: [
       'Oral language development and fluency',
       'Listening comprehension',
@@ -57,7 +57,7 @@ export const literacyStrands = [
   {
     value: 'Language Study',
     label: 'Language Study',
-    icon: '\u{1F524}',
+    icon: '🔤',
     attainmentTargets: [
       'SJE grammar, syntax, and usage',
       'Vocabulary and morphology',
@@ -70,7 +70,7 @@ export const literacyStrands = [
   {
     value: 'Study Skills',
     label: 'Study Skills',
-    icon: '\u{1F50D}',
+    icon: '🔍',
     attainmentTargets: [
       'Reading for information and research',
       'Note-taking and summarising',
@@ -85,18 +85,18 @@ export const literacyStrands = [
 export const languageContexts = [
   {
     value: 'SJE Focus',
-    label: 'SJE Focus \u2014 Standard Jamaican English',
+    label: 'SJE Focus — Standard Jamaican English',
     description: 'Lesson conducted primarily in Standard Jamaican English. Appropriate for all grades where SJE academic register is the primary goal.',
   },
   {
     value: 'SJE-JC Contrastive',
-    label: 'SJE\u2194JC Contrastive Approach',
+    label: 'SJE↔JC Contrastive Approach',
     description: 'Explicitly compares SJE and Jamaican Creole to build register awareness. Ideal for Language Study and vocabulary-building lessons.',
   },
   {
     value: 'JC to SJE Bridge',
-    label: 'JC \u2192 SJE Bridging (Early Years)',
-    description: 'Uses oral JC to activate prior knowledge, then scaffolds into SJE. Recommended for Grades K\u20133 per the Language Education Policy.',
+    label: 'JC → SJE Bridging (Early Years)',
+    description: 'Uses oral JC to activate prior knowledge, then scaffolds into SJE. Recommended for Grades K–3 per the Language Education Policy.',
   },
   {
     value: 'Digital Literacy Context',
