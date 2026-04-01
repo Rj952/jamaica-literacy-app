@@ -18,11 +18,11 @@ const milestones = [
   { year: 2004, event: 'Task Force on Educational Reform',                    type: 'foundation' },
   { year: 2007, event: 'NCLP Initiated (National Comprehensive Literacy Programme)', type: 'programme' },
   { year: 2011, event: 'NCLP "12 Pillars" publicly communicated',             type: 'programme' },
-  { year: 2012, event: 'NESP 2011\u20132020 Published',                            type: 'programme' },
+  { year: 2012, event: 'NESP 2011–2020 Published',                            type: 'programme' },
   { year: 2014, event: 'Ministry Paper 88 & National Literacy Steering Committee', type: 'programme' },
-  { year: 2019, event: 'NSC Language & Literature Guide (Grades 7\u20139)',         type: 'curriculum' },
+  { year: 2019, event: 'NSC Language & Literature Guide (Grades 7–9)',         type: 'curriculum' },
   { year: 2022, event: 'ICT in Education Policy Issued',                       type: 'technology' },
-  { year: 2025, event: 'Timetabled Reading \u2014 Grades 1\u20133 & Teacher Retooling', type: 'current' },
+  { year: 2025, event: 'Timetabled Reading — Grades 1–3 & Teacher Retooling', type: 'current' },
 ]
 
 const typeColors = {
@@ -47,7 +47,7 @@ const quickLinks = [
     desc: 'Explore all 8 national literacy policies and their NSC alignment.',
     color: 'from-forest-800 to-forest-700',
     accent: 'text-gold-400',
-    icon: '\u{1F4DA}',
+    icon: '📚',
   },
   {
     id: 'lessons',
@@ -55,7 +55,7 @@ const quickLinks = [
     desc: 'Generate NSC-aligned literacy lessons tailored to the Jamaican classroom context.',
     color: 'from-tech-700 to-tech-600',
     accent: 'text-tech-200',
-    icon: '\u2728',
+    icon: '✨',
   },
   {
     id: 'strategies',
@@ -63,7 +63,7 @@ const quickLinks = [
     desc: 'Six research-grounded strategy clusters with practical classroom tactics.',
     color: 'from-forest-700 to-forest-600',
     accent: 'text-gold-300',
-    icon: '\u{1F4A1}',
+    icon: '💡',
   },
   {
     id: 'alignment',
@@ -71,10 +71,9 @@ const quickLinks = [
     desc: 'Policy-to-curriculum crosswalk table with classroom and assessment implications.',
     color: 'from-gold-600 to-gold-500',
     accent: 'text-forest-900',
-    icon: '\u{1F5C2}\uFE0F',
+    icon: '🗂️',
   },
 ]
-
 // Simple inline bar chart using divs
 function MasteryChart() {
   const recent = masteryData.slice(-8)
@@ -123,16 +122,18 @@ export default function Dashboard({ onNavigate }) {
 
   return (
     <div>
-      {/* Hero */}
+      {/* ─── Hero ──────────────────────────────────────────────────── */}
       <section
         className="bg-forest-800 text-white px-6 py-12 md:py-16 relative overflow-hidden"
         aria-labelledby="hero-heading"
       >
+        {/* Decorative leaf pattern overlay */}
         <div className="absolute inset-0 bg-leaf-pattern opacity-40 pointer-events-none" aria-hidden="true"/>
+        {/* Decorative gold circle */}
         <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-gold-500 opacity-10 pointer-events-none" aria-hidden="true"/>
 
         <div className="relative max-w-3xl">
-          <div className="tag tag-gold mb-4">National Standards Curriculum \u2022 NCLP \u2022 2025 Initiative</div>
+          <div className="tag tag-gold mb-4">National Standards Curriculum · NCLP · 2025 Initiative</div>
           <h1
             id="hero-heading"
             className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4"
@@ -142,7 +143,7 @@ export default function Dashboard({ onNavigate }) {
           <p className="text-forest-200 text-base md:text-lg leading-relaxed max-w-2xl mb-8">
             A policy-grounded resource for Jamaican literacy educators. Navigate national literacy policy,
             design NSC-aligned lessons with AI support, and apply evidence-based teaching strategies
-            for every classroom context \u2014 including Standard Jamaican English and Jamaican Creole.
+            for every classroom context — including Standard Jamaican English and Jamaican Creole.
           </p>
           <div className="flex flex-wrap gap-3">
             <button onClick={() => onNavigate('lessons')} className="btn-gold">
@@ -157,7 +158,7 @@ export default function Dashboard({ onNavigate }) {
 
       <div className="max-w-5xl mx-auto px-4 md:px-6 py-8 space-y-10">
 
-        {/* Key Stats */}
+        {/* ─── Key Stats ─────────────────────────────────────────────── */}
         <section aria-labelledby="stats-heading">
           <h2 id="stats-heading" className="sr-only">National literacy performance statistics</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -167,10 +168,10 @@ export default function Dashboard({ onNavigate }) {
               </div>
               <div>
                 <div className="font-display text-3xl font-bold text-forest-800">
-                  {first1999}% \u2192 {first2013}%
+                  {first1999}% → {first2013}%
                 </div>
                 <div className="text-sm text-forest-500 mt-0.5">
-                  Grade 4 Literacy Mastery (1st admin, 1999\u20132013)
+                  Grade 4 Literacy Mastery (1st admin, 1999–2013)
                 </div>
               </div>
             </div>
@@ -182,7 +183,7 @@ export default function Dashboard({ onNavigate }) {
               <div>
                 <div className="font-display text-3xl font-bold text-forest-800">{second2013}%</div>
                 <div className="text-sm text-forest-500 mt-0.5">
-                  2nd admin mastery by 2013 \u2014 near Ministry target
+                  2nd admin mastery by 2013 — near Ministry target
                 </div>
               </div>
             </div>
@@ -201,13 +202,13 @@ export default function Dashboard({ onNavigate }) {
           </div>
         </section>
 
-        {/* Chart + Context */}
+        {/* ─── Chart + Context ───────────────────────────────────────── */}
         <section aria-labelledby="chart-heading" className="grid md:grid-cols-5 gap-6">
           <div className="md:col-span-3 card">
             <h2 id="chart-heading" className="font-display text-lg font-semibold text-forest-800 mb-1">
-              Grade 4 Literacy Test \u2014 Mastery Trend
+              Grade 4 Literacy Test — Mastery Trend
             </h2>
-            <p className="text-xs text-forest-500 mb-4">Public schools, 2006\u20132013 \u00B7 Source: Ministry Paper 88</p>
+            <p className="text-xs text-forest-500 mb-4">Public schools, 2006–2013 · Source: Ministry Paper 88</p>
             <MasteryChart />
           </div>
 
@@ -216,10 +217,10 @@ export default function Dashboard({ onNavigate }) {
               The Policy Stack
             </h2>
             <p className="text-sm text-forest-200 leading-relaxed mb-4">
-              Jamaica's national literacy system operates as a layered "policy stack" \u2014 each layer building on the last:
+              Jamaica's national literacy system operates as a layered “policy stack” — each layer building on the last:
             </p>
             <div className="space-y-2">
-              {['Reform Frameworks (2001\u20132004)', 'NCLP Programme Architecture (2007\u2013)', 'NSC Curriculum Alignment (2019)', 'ICT & Timetabled Reading (2022\u20132025)'].map((layer, i) => (
+              {['Reform Frameworks (2001–2004)', 'NCLP Programme Architecture (2007–)', 'NSC Curriculum Alignment (2019)', 'ICT & Timetabled Reading (2022–2025)'].map((layer, i) => (
                 <div key={i} className="flex items-center gap-2.5">
                   <div className="w-6 h-6 rounded-full bg-gold-500 text-forest-900 text-xs font-bold flex items-center justify-center flex-shrink-0">
                     {i + 1}
@@ -237,7 +238,7 @@ export default function Dashboard({ onNavigate }) {
           </div>
         </section>
 
-        {/* Policy Timeline */}
+        {/* ─── Policy Timeline ─────────────────────────────────────── */}
         <section aria-labelledby="timeline-heading">
           <div className="section-header">
             <h2 id="timeline-heading" className="font-display text-xl font-semibold text-forest-900">
@@ -247,11 +248,13 @@ export default function Dashboard({ onNavigate }) {
           </div>
 
           <div className="relative">
+            {/* Vertical line */}
             <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-forest-100" aria-hidden="true"/>
 
             <ol className="space-y-4" aria-label="Policy timeline">
               {milestones.map((m, i) => (
                 <li key={i} className="flex items-start gap-4 pl-12 relative">
+                  {/* Dot */}
                   <div
                     className={`absolute left-3.5 top-1 w-3 h-3 rounded-full border-2 border-white ${typeColors[m.type]}`}
                     aria-hidden="true"
@@ -269,7 +272,7 @@ export default function Dashboard({ onNavigate }) {
           </div>
         </section>
 
-        {/* Quick Access Cards */}
+        {/* ─── Quick Access Cards ──────────────────────────────────── */}
         <section aria-labelledby="quicknav-heading">
           <div className="section-header">
             <h2 id="quicknav-heading" className="font-display text-xl font-semibold text-forest-900">
@@ -283,7 +286,7 @@ export default function Dashboard({ onNavigate }) {
                 onClick={() => onNavigate(link.id)}
                 className={`card-hover text-left bg-gradient-to-br ${link.color} text-white group`}
               >
-                <div className="text-3xl mb-3">{link.icon}</div>
+                <div className={`text-3xl mb-3`}>{link.icon}</div>
                 <h3 className={`font-display text-lg font-semibold mb-1 ${link.accent}`}>
                   {link.title}
                 </h3>
@@ -296,7 +299,7 @@ export default function Dashboard({ onNavigate }) {
           </div>
         </section>
 
-        {/* Attribution note */}
+        {/* ─── Attribution note ────────────────────────────────────── */}
         <footer className="text-xs text-forest-400 text-center pb-4">
           Content grounded in Ministry Paper 88, the NSC Language & Literature Guide, and official Jamaica government sources.
           Built for Jamaican literacy educators. Not an official Ministry publication.
